@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  age: 1
+  gender: false
+  latitude: 1
+  longitude: 1
+  flag,null: 1
+
+two:
+  name: MyString
+  age: 1
+  gender: false
+  latitude: 1
+  longitude: 1
+  flag,null: 1
