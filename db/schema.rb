@@ -19,9 +19,9 @@ ActiveRecord::Schema.define(version: 2019_09_11_162607) do
     t.string "name", null: false
     t.integer "age", null: false
     t.boolean "gender", null: false
-    t.integer "latitude", null: false
-    t.integer "longitude", null: false
-    t.integer "flag"
+    t.float "latitude", null: false
+    t.float "longitude", null: false
+    t.integer "flag", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

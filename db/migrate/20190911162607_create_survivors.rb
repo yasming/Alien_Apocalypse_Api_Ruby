@@ -4,9 +4,9 @@ class CreateSurvivors < ActiveRecord::Migration[6.0]
       t.string :name, null: false
       t.integer :age, null: false
       t.boolean :gender, null: false
-      t.integer :latitude, null: false
-      t.integer :longitude, null: false
-      t.integer :flag
+      t.float :latitude, null: false
+      t.float :longitude, null: false
+      t.integer :flag, default: 0
 
       t.timestamps
     end
