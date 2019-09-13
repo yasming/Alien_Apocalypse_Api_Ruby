@@ -3,25 +3,27 @@ module Api
 		class SurvivorsController < ApplicationController 
 			
             def index
-				survivors = Survivor.listAllSurvivorsWithTheirSituation
-				render json: {status: 'SUCCESS', message:'Survivors loaded', data:survivors}
+				survivors = Survivor.display_all
+				# survivors = Survivor.listAllSurvivorsWithTheirSituation
+				render json: self.api_response('SUCCESS', 'Survivors loaded', survivors),status: :ok
+
 			end  
 			
 			def create
 				survivor = Survivor.new(survivor_params)
 				if survivor.save
-					render json: {status: 'SUCCESS', message:'Saved survivor', data:survivor},status: :ok
+					render json: self.api_response('SUCCESS', 'Survivor saved', survivor)
 				else
-					render json: {status: 'ERROR', message:'Survivor not saved', data:survivor.errors},status: :unprocessable_entity
+					render json: self.api_response('ERROR', 'Survivor not saved', survivor.errors),status: :unprocessable_entity
 				end
 			end
 
 			def update
 				survivor = Survivor.find(params[:id])
 				if survivor.update_attributes(survivor_params)
-					render json: {status: 'SUCCESS', message:'Updated survivor', data:survivor},status: :ok
+					render json: self.api_response('SUCCESS', 'Survivor Updated', survivor),status: :ok
 				else
-					render json: {status: 'ERROR', message:'Survivors not update', data:survivor.erros},status: :unprocessable_entity
+					render json: self.api_response('ERROR', 'Survivor not update', survivor.errors),status: :unprocessable_entity
 				end
 			end
 
@@ -29,13 +31,12 @@ module Api
 				survivor = Survivor.find(params[:id])
 				survivor.flag = survivor.flag + 1
 				survivor.save
-				render json: {status: 'SUCCESS', message:'Survivor flagged', data:survivor},status: :ok
+				render json: self.api_response('SUCCESS', 'Survivor flagged', survivor),status: :ok
 			end
 
 			def reports
-				query = 'SELECT (count(*)-COUNT( case when flag >=3  then 1 else null end))*100/Count(*) AS "non-abducted", COUNT( case when flag >=3  then 1 else null end)*100/count(*) AS abducted FROM public.survivors;'
-				survivors = ActiveRecord::Base.connection.execute(query)
-				render json: {status: 'SUCCESS', message:'Percentage of abducted and non-abducted survivors', data:survivors},status: :ok
+				reports = Survivor.statistics
+				render json: self.api_response('SUCCESS', 'Percentage of abducted and non-abducted survivors', reports),status: :ok
 			end
 
 			private
