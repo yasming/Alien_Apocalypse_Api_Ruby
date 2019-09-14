@@ -1,6 +1,3 @@
-IS_ABDUCTED = 'ABDUCTED'
-IS_NOT_ABDUCTED = 'NOT ABDUCTED'
-
 class Survivor < ApplicationRecord
     
     validates :name, presence: true
@@ -21,8 +18,7 @@ class Survivor < ApplicationRecord
         survivors = self.list_all
         abducteds = survivors.count { |survivor| self.is_abducted survivor.flag }
         not_abducteds = survivors.count { |survivor| self.is_not_abducted survivor.flag }
-        
-        {abducteds: (abducteds*100)/survivors.length, not_abducteds: (not_abducteds*100)/survivors.length }.as_json
+        {abducteds: (abducteds*100.0)/survivors.length, not_abducteds: ((survivors.length-abducteds)*100.0)/survivors.length }.as_json
     end    
 
     def self.list_all  
@@ -39,11 +35,18 @@ class Survivor < ApplicationRecord
         {name: name,  status: status}.as_json
     end
 
-    # def self.list_allWithTheirSituation
-    #     Survivor.select("name, case when flag >= 3 then 'abducted' else 'non-abducted' end as situation").group(:name,:flag,:id).order(:name).as_json(:except => :id)
+    def self.flagged id
+        survivor = self.find(id)
+        survivor.flag = survivor.flag + 1
+        survivor.save
+        survivor
+    end
+    
+    # def self.list_all_with_their_status
+    #     Survivor.select("name, case when flag >= 3 then 'abducted' else 'non-abducted' end as status").group(:name,:flag,:id).order(:name).as_json(:except => :id)
     # end
 
-    # def self.listPercentageOfAbductedAndNonAbductedSurvivors
-    #     Survivor.select('(count(*)-COUNT( case when flag >=3  then 1 else null end))*100/Count(*) AS "non-abducted", COUNT( case when flag >=3  then 1 else null end)*100/count(*) AS abducted').as_json(:except => :id)
+    # def self.list_percentage_of_abducted_and_non_abducted_survivors
+    #     Survivor.select('(count(*)-COUNT( case when flag >=3  then 1 else null end))*100.0/Count(*) AS "non-abducted", COUNT( case when flag >=3  then 1 else null end)*100.0/count(*) AS abducted').as_json(:except => :id)
     # end
 end
