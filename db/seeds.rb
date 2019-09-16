@@ -15,6 +15,5 @@
         latitude: 123,
         longitude: 123,
 
-
 	})
 end

@@ -34,7 +34,7 @@ module Api
 
 			def reports
 				reports = Survivor.statistics
-				# reports = Survivor.statistics
+				# reports = Survivor.list_percentage_of_abducted_and_non_abducted_survivors
 				render json: self.api_response(@success_message, @survivor_percentage, reports),status: :ok
 			end
 
