@@ -14,6 +14,5 @@
         gender: 0,
         latitude: 123,
         longitude: 123,
-
 	})
 end

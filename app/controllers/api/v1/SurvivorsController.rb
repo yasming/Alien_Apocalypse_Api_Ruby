@@ -3,7 +3,7 @@ module Api
 		class SurvivorsController < ApplicationController 
 			
             def index
-				survivors = Survivor.display_all
+				survivors = Survivor.show_all
 				# survivors = Survivor.list_all_with_their_status
 				render json: self.api_response(@success_message, @survivors_loaded, survivors),status: :ok
 

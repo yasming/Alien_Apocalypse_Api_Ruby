@@ -23,6 +23,7 @@ default: &default
 
 development:
   <<: *default
+  # host: db
   database: Alien_Apocalypse
   username: yasmin
   password: 
