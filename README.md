@@ -39,7 +39,8 @@ run this command in terminal: chmod +x docker-entrypoint.sh
 ```
 
 ```
-Uncomment lines 23 and 63 from archive: config/database.yml
+Uncomment lines 23 and 63 from archive: config/database.yml, because
+when postgres is running in docker db host is changed
 ```
 
 ```
@@ -53,7 +54,8 @@ run this command in terminal: docker-compose up
 - Running application locally: 
 
 ```
-Comment lines 23 and 63 from archive: config/database.yml
+Comment lines 23 and 63 from archive: config/database.yml, because
+when postgres is running locally isn't necessary expose the host
 ```
 
 ```
