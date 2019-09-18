@@ -49,6 +49,7 @@ run this commands in terminal:
 
 ```
 docker build .
+docker-compose up
 ```
 
 ```
