@@ -49,6 +49,9 @@ run this commands in terminal:
 
 ```
 docker build .
+```
+
+```
 docker-compose up
 ```
 
@@ -65,6 +68,9 @@ run this commands in terminal:
 
 ```
 bundle update
+```
+
+```
 rails db:migrate
 ```
 
@@ -84,6 +90,9 @@ run this commands in terminal:
 
 ```
 bundle update
+```
+
+```
 rspec // run the tests
 ```
 
