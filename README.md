@@ -44,11 +44,15 @@ when postgres is running in docker db host is changed
 ```
 
 ```
-run this command in terminal: docker build .
+run this commands in terminal:
 ```
 
 ```
-run this command in terminal: docker-compose up
+docker build .
+```
+
+```
+docker-compose up
 ```
 
 - Running application locally: 
@@ -59,35 +63,43 @@ when postgres is running locally isn't necessary expose the host
 ```
 
 ```
-run this command in terminal: bundle update
+run this commands in terminal:
 ```
 
 ```
-run this command in terminal: rails db:migrate
+bundle update
 ```
 
 ```
-if want to seed the database, run this command in terminal: rake db:seed or rails db:seed
+rails db:migrate
 ```
 
 ```
-run this command in terminal: rails s
+if want to seed the database, run: rake db:seed or rails db:seed
+```
+
+```
+rails s // start the server
 ```
 
 - Running application tests: 
 
 ```
-run this command in terminal: bundle update
+run this commands in terminal:
 ```
 
 ```
-run this command in terminal to run the tests: rspec
+bundle update
+```
+
+```
+rspec // run the tests
 ```
 
 OR
 
 ```
-run this command in terminal to run the tests: rails -s
+rails -s // run the tests
 ```
 
 
