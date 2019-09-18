@@ -24,7 +24,13 @@ Bundle >= 1.17.3
 PostgreSQL
 ```
 
-### Getting Started
+### API Documentation
+
+```
+https://app.swaggerhub.com/apis-docs/yasminguimaraes/Alien_Apocalypse/1.0.0#/
+```
+
+#### Getting Started
 
 - Running application with docker: 
 
@@ -82,8 +88,4 @@ OR
 run this command in terminal to run the tests: rails -s
 ```
 
-#### API Documentation
 
-```
-https://app.swaggerhub.com/apis-docs/yasminguimaraes/Alien_Apocalypse/1.0.0#/
-```
