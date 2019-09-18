@@ -19,7 +19,7 @@ module Api
 
 			def update
 				survivor = Survivor.find(params[:id])
-				if survivor.update_attributes(survivor_params_update)
+				if survivor.update(survivor_params_update)
 					render json: self.api_response(@success_message, @survivor_updated, survivor),status: :ok
 				else
 					render json: self.api_response(@error_message, @survivor_not_updated, survivor.errors),status: :unprocessable_entity

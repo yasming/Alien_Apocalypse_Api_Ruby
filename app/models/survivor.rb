@@ -2,7 +2,7 @@ class Survivor < ApplicationRecord
     
     validates :name, presence: true
     validates :age, presence: true
-    validates :gender,inclusion: { in: [ true, false ], message: "gender can't be blank"}
+    validates :gender,inclusion: { in: [ true, false ], message: "can't be blank"}
     validates :latitude, presence: true
     validates :longitude, presence: true
 
