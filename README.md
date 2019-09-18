@@ -30,7 +30,7 @@ PostgreSQL
 https://app.swaggerhub.com/apis-docs/yasminguimaraes/Alien_Apocalypse/1.0.0#/
 ```
 
-#### Getting Started
+### Getting Started
 
 - Running application with docker: 
 
