@@ -85,7 +85,6 @@ run this commands in terminal:
 ```
 bundle update
 rspec // run the tests
-
 ```
 
 OR
