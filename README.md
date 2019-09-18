@@ -1,24 +1,89 @@
-# README
+# Alien_Apocalypse_Api
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project is a simulation of an alien apocalypse. An alien invasion is abducting humans and swapping them for evil clones that look really similar to the original person. So, in this application we can see all survivors, edit their locations, see the statics of abducted and non-abducted survivors and add new survivors .
 
-Things you may want to cover:
+## Prerequisites
 
-* Ruby version
+```
+Ruby >= 2.5.0
+```
 
-* System dependencies
+```
+Rails >= 6.0.0
+```
 
-* Configuration
+```
+Gem >= 3.0.6
+```
 
-* Database creation
+```
+Bundle >= 1.17.3
+```
 
-* Database initialization
+```
+PostgreSQL
+```
 
-* How to run the test suite
+### Getting Started
 
-* Services (job queues, cache servers, search engines, etc.)
+- Running application with docker: 
 
-* Deployment instructions
+```
+run this command in terminal: chmod +x docker-entrypoint.sh 
+```
 
-* ...
+```
+Uncomment lines 23 and 63 from archive: config/database.yml
+```
+
+```
+run this command in terminal: docker build .
+```
+
+```
+run this command in terminal: docker-compose up
+```
+
+- Running application locally: 
+
+```
+Comment lines 23 and 63 from archive: config/database.yml
+```
+
+```
+run this command in terminal: bundle update
+```
+
+```
+run this command in terminal: rails db:migrate
+```
+
+```
+if want to seed the database, run this command in terminal: rake db:seed or rails db:seed
+```
+
+```
+run this command in terminal: rails s
+```
+
+- Running application tests: 
+
+```
+run this command in terminal: bundle update
+```
+
+```
+run this command in terminal to run the tests: rspec
+```
+
+OR
+
+```
+run this command in terminal to run the tests: rails -s
+```
+
+#### API Documentation
+
+```
+https://app.swaggerhub.com/apis-docs/yasminguimaraes/Alien_Apocalypse/1.0.0#/
+```
