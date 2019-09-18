@@ -52,10 +52,6 @@ docker build .
 docker-compose up
 ```
 
-```
-docker-compose up
-```
-
 - Running application locally: 
 
 ```
@@ -69,9 +65,6 @@ run this commands in terminal:
 
 ```
 bundle update
-```
-
-```
 rails db:migrate
 ```
 
@@ -91,10 +84,8 @@ run this commands in terminal:
 
 ```
 bundle update
-```
-
-```
 rspec // run the tests
+
 ```
 
 OR
