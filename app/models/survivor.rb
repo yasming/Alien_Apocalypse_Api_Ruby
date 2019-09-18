@@ -41,16 +41,4 @@ class Survivor < ApplicationRecord
         survivor.save
         survivor
     end
-    
-    # def self.list_all_with_their_status
-    #     Survivor.select("name, case when flag >= 3 then 'abducted' else 'non-abducted' end as status")
-    #             .group(:name,:flag,:id)
-    #             .order(:name)
-    #             .as_json(:except => :id)
-    # end
-
-    # def self.list_percentage_of_abducted_and_non_abducted_survivors
-    #     Survivor.select('(count(*)-COUNT( case when flag >=3  then 1 else null end))*100.0/Count(*) AS "non-abducted", COUNT( case when flag >=3  then 1 else null end)*100.0/count(*) AS abducted')
-    #             .as_json(:except => :id)
-    # end
 end

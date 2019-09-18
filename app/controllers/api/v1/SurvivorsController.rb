@@ -4,7 +4,6 @@ module Api
 			
             def index
 				survivors = Survivor.show_all
-				# survivors = Survivor.list_all_with_their_status
 				render json: self.api_response(@success_message, @survivors_loaded, survivors),status: :ok
 
 			end  
@@ -34,7 +33,6 @@ module Api
 
 			def reports
 				reports = Survivor.statistics
-				# reports = Survivor.list_percentage_of_abducted_and_non_abducted_survivors
 				render json: self.api_response(@success_message, @survivor_percentage, reports),status: :ok
 			end
 
